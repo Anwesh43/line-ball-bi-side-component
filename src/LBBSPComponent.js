@@ -6,10 +6,11 @@ const CurrDiv = ({style}) => {
 }
 
 const LBBSPComponent = ({w, h, scale, onClick}) => {
-    const {getLineStyle, getCircleStyle} = useStyle(w, h, scale)
+    const {getLineStyle, getCircleStyle, getButtonStyle} = useStyle(w, h, scale)
     return (<div>
-        {[0, 1].map(i => <CurrDiv key = `circle_${i}` style = {getCircleStyle(i)}/>)}
-        {[0, 1].map(i => <CurrDiv key = `line_${i}` style = {getLineStyle(i)}/>)}
+        {[0, 1].map(i => <CurrDiv key = {`circle_${i}`} style = {getCircleStyle(i)}/>)}
+        {[0, 1].map(i => <CurrDiv key = {`line_${i}`} style = {getLineStyle(i)}/>)}
+        <button style = {getButtonStyle()} onClick = {onClick}>start</button>
     </div>)
 }
 

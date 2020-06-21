@@ -4,7 +4,7 @@ import LBBSPComponent from './LBBSPComponent'
 
 const LineBallBiSideComponent = (props) => {
     const {w, h} = useDimension()
-    const {scale, start} = useAnimatedScale(0.02, 30)
+    const {scale, start} = useAnimatedScale(0.01, 30)
     return <div>
         <LBBSPComponent w = {w} h = {h} scale = {scale} onClick = {start}/>
     </div>

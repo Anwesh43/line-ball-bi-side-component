@@ -59,7 +59,7 @@ export const useStyle = (w, h, scale) => {
             const sj = 1 - 2 * i
             const width = `${xf - radius * sf2 * sj}px`
             const height = `${Math.min(w, h) / 90}px`
-            const left = `${fixedX - (xf - radius * sf2) * i * sj}px`
+            const left = `${fixedX + (xf - radius * sf2) * i * sj}px`
             const top = `${h / 2 - parseInt(height) / 2}px`
             return {position, background, width, height, left, top}
         },
@@ -67,10 +67,15 @@ export const useStyle = (w, h, scale) => {
             const sj = 1 - 2 * i
             const width = `${2 * radius * sf1}px`
             const height = `${2 * radius * sf1}px`
-            const left = `${fixedX - radius - xf * sj}px`
-            const top = `${fixedY - radius}px`
+            const left = `${fixedX - radius * sf1 - xf * sj}px`
+            const top = `${fixedY - radius * sf1}px`
             const borderRadius = `50%`
             return {position, left, top, width, height, borderRadius, background}
+        },
+        getButtonStyle() {
+            const top = `${h * 0.8}px`
+            const left = `${w * 0.48}px`
+            return {position, top, left}
         }
     }
 }
